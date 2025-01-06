@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | Test Yourself</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quiz-container {
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: fadeIn 1.5s;
+        }
+
+        .quiz-header {
+            background: linear-gradient(135deg, #56cfe1, #4a90e2);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 15px 15px 0 0;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        /* Quiz form styling */
+        .form-group {
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+        select, .btn {
+            font-size: 1rem;
+            padding: 0.75rem;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        .btn {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #337ab7;
+        }
+
+        /* Quiz question styling */
+        .question-section {
+            display: none;
+            padding: 1.5rem;
+            text-align: left;
+            background: #f9f9f9;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .question {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .options label {
+            display: block;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: #e8f0fe;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .options input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+
+        .options label:hover {
+            background: #cce5ff;
+        }
+
+        /* Result styling */
+        .result-message {
+            display: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 10px;
+        }
+
+        .result-message.success {
+            background: #e0ffe1;
+            color: #2e7d32;
+        }
+
+        .result-message.failure {
+            background: #ffe0e0;
+            color: #d32f2f;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h2>Test Yourself</h2>
+            <p>Select a subject and quiz to get started!</p>
+        </div>
+
+        <div class="form-group">
+            <label for="subject-select">Select Subject</label>
+            <select id="subject-select">
+                <option value="english">English</option>
+                <option value="computerscience">Computer Science</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="quiz-select">Select Quiz</label>
+            <select id="quiz-select">
+                <option value="1">Quiz 1</option>
+                <option value="2">Quiz 2</option>
+            </select>
+        </div>
+
+        <button class="btn" onclick="startQuiz()">Start Quiz</button>
+
+        <div class="question-section" id="quiz-section">
+            <div class="question" id="question-container"></div>
+            <div class="options" id="options-container"></div>
+            <button class="btn" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+
+        <div class="result-message" id="result-message"></div>
+    </div>
+    <button onclick="location.href='index.html'" class="btn-back">Back to Home</button>
+
+    <script>
+        // Questions for different subjects and quizzes
+        const quizzes = {
+            english: {
+                1: [
+                    { question: "A for?", options: ["Apple", "Orange", "Guava"], answer: "Apple" },
+                    { question: "B for?", options: ["Cat", "Bat", "Goat"], answer: "Bat" },
+                ],
+                2: [
+                    { question: "Y for?", options: ["Corn", "Yacht", "Grapes"], answer: "Yacht" },
+                    { question: "F for?", options: ["Boy", "Fan", "Dance"], answer: "Fan" },
+                ]
+            },
+            computerscience: {
+                1: [
+                    { question: "What do you click to write a new email?", options: ["Inbox", "Compose", "Send"], answer: "Compose" }
+                ]
+            }
+        };
+
+        function startQuiz() {
+            const subject = document.getElementById('subject-select').value;
+            const quiz = document.getElementById('quiz-select').value;
+            const selectedQuiz = quizzes[subject][quiz];
+
+            if (selectedQuiz) {
+                document.getElementById('quiz-section').style.display = 'block';
+                document.getElementById('result-message').style.display = 'none';
+                document.getElementById('question-container').innerHTML = generateQuizHTML(selectedQuiz);
+            }
+        }
+
+        function generateQuizHTML(selectedQuiz) {
+            let quizHTML = "";
+            selectedQuiz.forEach((q, index) => {
+                quizHTML += `<p class="question">${q.question}</p><div class="options">`;
+                q.options.forEach(option => {
+                    quizHTML += `<label>
+                                    <input type="radio" name="question${index}" value="${option}"> ${option}
+                                 </label>`;
+                });
+                quizHTML += `</div>`;
+            });
+            return quizHTML;
+        }
+
+        function submitQuiz() {
+            const subject = document.getElementById('subject-select').value;
+            const quiz = document.getElementById('quiz-select').value;
+            const selectedQuiz = quizzes[subject][quiz];
+
+            let correct = true;
+            selectedQuiz.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="question${index}"]:checked`);
+                if (!selected || selected.value !== q.answer) {
+                    correct = false;
+                }
+            });
+            const resultMessage = document.getElementById('result-message');
+        if (correct) {
+            resultMessage.className = 'result-message success';
+            resultMessage.innerHTML = "🎉 Hurrah! You passed the test!";
+        } else {
+            resultMessage.className = 'result-message failure';
+            if (subject === "computerscience") {
+                resultMessage.innerHTML = `Oops! You need to review the lesson again. <a href="images/LECTUREEMAIL.mp4">Watch the lesson</a>`;
+            } else {
+                resultMessage.innerHTML = `Oops! You need to review the lesson again. <a href="images/LESSON1.mp4">Watch the lesson</a>`;
+            }
+        }
+
+        resultMessage.style.display = 'block';
+    }
+</script>
+</body>
+</html>

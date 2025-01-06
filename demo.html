@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Main Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(90deg, #4a90e2, #56cfe1);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .demo-section {
+            text-align: center;
+            padding: 2rem;
+            animation: fadeInUp 1.5s;
+        }
+
+        .video-container {
+            display: inline-block;
+            width: 80%;
+            max-width: 800px;
+            margin-top: 1rem;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            background: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Project Demo</h1>
+        <p>Explore our English and Computer Science courses designed for deaf individuals.</p>
+    </header>
+
+    <main>
+   
+        <section class="demo-section">
+            <h2>Pakistan National Anthem</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="images/nationalanthem.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+        <section class="demo-section">
+            <h2>Computer Science Introductory Course Lecture</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="images/LECTURE-EMAIL.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+        <section class="demo-section">
+            <h2>English Introductory Course Lecture</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="images/LESSON1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        
+        <button onclick="location.href='lesson.html'" class="btn-back">Back to Home</button>
+
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Organization. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

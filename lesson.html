@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science for Deaf Individuals | PUCIT</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #4a90e2, #56cfe1);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            overflow: hidden;
+        }
+
+        /* Animation for Header Elements */
+        h1, h2, p {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideFadeIn 1s forwards;
+        }
+
+        h1 {
+            animation-delay: 0.5s;
+        }
+
+        h2 {
+            animation-delay: 1s;
+        }
+
+        p {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes slideFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .intro {
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: slideIn 1s ease-out;
+        }
+
+        .intro img {
+            border-radius: 10px;
+            width: 300px;
+            height: auto;
+            margin-right: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .intro img:hover {
+            transform: scale(1.05);
+        }
+
+        .button-container {
+            margin-top: 1rem;
+        }
+
+        .btn {
+            background: #4a90e2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #337ab7;
+        }
+
+        .features {
+            text-align: center;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            animation: fadeInUp 1.5s;
+        }
+
+        .feature-item {
+            display: inline-block;
+            width: 30%;
+            margin: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Data Science Department - PUCIT</h1>
+        <h2>Empowering Deaf Individuals Through Education</h2>
+        <p>Learn English and Computer Basics with Accessible Courses</p>
+    </header>
+
+    <section class="intro">
+        <img src="images/deaf-education.jpeg" alt="Deaf individual learning through technology">
+        <div class="intro-text">
+            <p>Welcome to our project aimed at bridging the communication gap for deaf individuals. This system provides an accessible platform for learning English and computer basics in sign language, enhancing career prospects and personal growth. Our modules integrate HamNoSys (Hamburg Notation System) and SiGML (Signing Gesture Markup Language) avatars, delivering content in an interactive, visually engaging format to help users understand complex topics. Each lecture concludes with multiple-choice questions (MCQs) to assess comprehension and reinforce learning. Our goal is to empower deaf individuals with the skills they need to succeed in a digital world.</p>
+            <div class="button-container">
+              <a href="/demo" class="btn">View Project Demo</a>
+              <a href="/quiz" class="btn">Test Yourself</a>
+          </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Project Features</h2>
+        <div class="feature-item">
+            <img src="images/feature1.jpg" alt="Interactive Learning">
+            <h3>Interactive Learning Modules</h3>
+            <p>Our modules combine visual aids and sign language translations to make learning interactive and enjoyable.</p>
+        </div>
+        <div class="feature-item">
+            <img src="images/feature2.jpg" alt="Sign Language Support">
+            <h3>Sign Language Support</h3>
+            <p>Content is available in PSL (Pakistan Sign Language) to make learning accessible for deaf users.</p>
+        </div>
+        <div class="feature-item">
+            <img src="images/feature3.jpg" alt="Computer Basics">
+            <h3>Computer Basics</h3>
+            <p>A full introductory course on computer science, designed specifically to aid accessibility and understanding.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 PUCIT Data Science Department</p>
+    </footer>
+</body>
+</html>

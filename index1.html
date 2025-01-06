@@ -1,0 +1,250 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTEROIC - Empowering Communication</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        .hero-section {
+        background: url('images/banner.jpg') no-repeat center center;
+        background-size: cover;
+        height: 100vh;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        animation: fadeIn 3s ease-in-out;
+        }
+
+        .fade-in-text {
+        animation: fadeInText 1.5s ease-in-out;
+        }
+
+        .carousel-item img {
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        }
+
+        .carousel-item img:hover {
+        transform: scale(1.05);
+        }
+
+        .learn-more-btn {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        border-radius: 30px;
+        transition: background-color 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+        background-color: #0056b3;
+        }
+
+        .statistics {
+        background-color: #f8f9fa;
+        padding: 40px 0;
+        }
+
+        .statistics .stat-card {
+        padding: 30px;
+        background: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        }
+
+        .statistics .stat-card:hover {
+        transform: translateY(-10px);
+        }
+
+        .footer {
+        background-color: #343a40;
+        color: #ffffff;
+        padding: 30px 0;
+        text-align: center;
+        }
+
+        @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+        }
+
+        @keyframes fadeInText {
+        from {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        }
+    </style>
+    </head>
+    <body>
+
+    <!-- Navbar -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light shadow">
+        <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="images/gesteroic-logo.png" alt="GESTEROIC Logo" height="50">
+            <span class="ms-2 fw-bold">GESTEROIC</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Dictionary</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Stories</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            </ul>
+        </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="fade-in-text">
+        <h1 class="display-4 fw-bold">Welcome to GESTEROIC</h1>
+        <p class="lead">Empowering Communication Through Pakistan Sign Language (PSL)</p>
+        <p>Over 5 million people in Pakistan are Deaf, and they often face challenges in accessing proper education. At GESTEROIC, we aim to bridge this gap and provide an accessible, inclusive platform for learning PSL.</p>
+        <a href="#learn-more" class="learn-more-btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Carousel -->
+    <main>
+        <div class="container mt-5">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            <!-- Banner 1 -->
+            <div class="carousel-item active">
+                <div class="container">
+                <div class="row banner-section">
+                    <div class="col-md-6 text-content">
+                    <h1>Join the PSL Movement</h1>
+                    <p>Start your learning journey with our rich collection of sign language resources.</p>
+                    </div>
+                    <div class="col-md-6">
+                    <img src="images/deaf.png" class="d-block w-100" alt="Deaf Community">
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Banner 2 -->
+            <div class="carousel-item">
+                <div class="container">
+                <div class="row banner-section">
+                    <div class="col-md-6 text-content">
+                    <h1>Over 500+ Signs to Learn</h1>
+                    <p>Explore a wide range of words and phrases in PSL to enhance your communication skills.</p>
+                    <button class="learn-more-btn">Learn More</button>
+                    </div>
+                    <div class="col-md-6">
+                    <img src="images/words.jpg" class="d-block w-100" alt="Words in PSL">
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Banner 3 -->
+            <div class="carousel-item">
+                <div class="container">
+                <div class="row banner-section">
+                    <div class="col-md-6 text-content">
+                    <h1>Engaging Interactive Stories</h1>
+                    <p>Immerse yourself in exciting stories while learning PSL in an interactive and enjoyable way.</p>
+                    <button class="learn-more-btn">Learn More</button>
+                    </div>
+                    <div class="col-md-6">
+                    <img src="images/third.jpg" class="d-block w-100" alt="Interactive Stories">
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Banner 4 -->
+            <div class="carousel-item">
+                <div class="container">
+                <div class="row banner-section">
+                    <div class="col-md-6 text-content">
+                    <h1>Empower Classrooms with PSL</h1>
+                    <p>Enhance education through inclusive tools designed for both teachers and students.</p>
+                    <button class="learn-more-btn">Learn More</button>
+                    </div>
+                    <div class="col-md-6">
+                    <img src="images/demos.jpg" class="d-block w-100" alt="Classroom Demos">
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <section class="statistics text-center">
+        <div class="container">
+            <h2 class="mb-4">Did You Know?</h2>
+            <div class="row">
+            <div class="col-md-3 stat-card">
+                <h3>5 Million+</h3>
+                <p>Deaf individuals in Pakistan who struggle to access proper education.</p>
+            </div>
+            <div class="col-md-3 stat-card">
+                <h3>1st</h3>
+                <p>PSL is the first language of communication for millions of Pakistanis.</p>
+            </div>
+            <div class="col-md-3 stat-card">
+                <h3>50+</h3>
+                <p>Interactive stories available on GESTEROIC to help you learn PSL.</p>
+            </div>
+            <div class="col-md-3 stat-card">
+                <h3>1000+</h3>
+                <p>Words and phrases for learning PSL at your own pace.</p>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Buttons -->
+        <a href="/main" class="btn btn-primary">Test the Hamnosys!</a>
+        <a href="/lesson" class="btn btn-primary">See the Courses!    </a>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 GESTEROIC | Empowering Communication Through Pakistan Sign Language</p>
+        <p>Follow us on <a href="#" class="text-white">Facebook</a>, <a href="#" class="text-white">Instagram</a>, and <a href="#" class="text-white">Twitter</a></p>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+
+    </body>
+    </html>
+
